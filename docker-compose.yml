@@ -1,0 +1,20 @@
+version: "3.8"
+
+volumes:
+  database:
+    external: false
+
+services:
+  app:
+    image: pld
+    depends_on:
+      - base
+    ports:
+      - "80:80"
+    
+  base:
+    image: db_pld
+    volumes:
+      - "database:/var/lib/mysql"
+    ports:
+      - "3306:3306"
