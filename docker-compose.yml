@@ -6,14 +6,14 @@ volumes:
 
 services:
   app:
-    image: pld
+    image: eduardokyc/pld:latest
     depends_on:
       - base
     ports:
       - "80:80"
     
   base:
-    image: db_pld
+    image: eduardokyc/db_pld:latest
     volumes:
       - "database:/var/lib/mysql"
     ports:
